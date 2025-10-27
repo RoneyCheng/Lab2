@@ -29,9 +29,19 @@ def sort_temperature(numbers):
     print("Sorted temperatures: " + str(sorted_list))
     return sorted_list
 
+def calc_median_temperature(numbers):
+    calc_list = sort_temperature(numbers)
+    if(len(calc_list)%2 == 1): # odd number
+        median_number = calc_list[len(calc_list) // 2]
+        print("The median number is "+str(median_number))
+    else:
+        median_number = (calc_list[len(calc_list) // 2 - 1] + calc_list[len(calc_list) // 2]) / 2
+        print("The median number is "+str(median_number))
+    return median_number
 
 display_main_menu()
 my_list = get_user_input()
 calc_average_temperature(my_list)
 find_min_max(my_list)
 sort_temperature(my_list)
+calc_median_temperature(my_list)
